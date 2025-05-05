@@ -1,8 +1,13 @@
-<h3>Lista de Alunos</h3>
+<!-- lista.component.html -->
+
+<!-- ✅ Exibe a lista se houver alunos -->
 <ul *ngIf="alunosService.getAlunos().length > 0; else semAlunos">
-  <li *ngFor="let aluno of alunosService.getAlunos()">{{ aluno }}</li>
+  <li *ngFor="let aluno of alunosService.getAlunos()">
+    {{ aluno }}
+  </li>
 </ul>
 
+<!-- ✅ Exibe mensagem se a lista estiver vazia -->
 <ng-template #semAlunos>
-  <p>Nenhum aluno cadastrado.</p>
+  <p>Nenhum aluno cadastrado</p>
 </ng-template>

@@ -7,7 +7,7 @@ import { RouterOutlet } from '@angular/router';
   standalone: true,
   imports: [HeaderComponent, RouterOutlet],
   templateUrl: './app.component.html',
-  styleUrl: './app.component.css'
+  styleUrls: ['./app.component.css'] // ✅ Corrigido aqui
 })
 export class AppComponent {
   title = 'cadastro-alunos';
