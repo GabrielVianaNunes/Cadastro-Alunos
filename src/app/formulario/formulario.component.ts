@@ -1,11 +1,22 @@
 import { Component } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-formulario',
-  imports: [],
+  standalone: true,
+  imports: [CommonModule, FormsModule],
   templateUrl: './formulario.component.html',
-  styleUrl: './formulario.component.css'
+  styleUrls: ['./formulario.component.css']
 })
 export class FormularioComponent {
+  nome: string = '';
+  listas: string[] = [];
 
+  salvarAluno(): void {
+    if (this.nome.trim()) {
+      this.listas.push(this.nome.trim());
+      this.nome = '';
+    }
+  }
 }
